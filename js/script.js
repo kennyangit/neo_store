@@ -24,7 +24,7 @@ const produtos = [
         nome: "Monitor Gamer Curvo Husky Boreal 34 Polegadas, WQHD, Ultrawide, 200Hz, 1ms, Adaptive Sync, DisplayPort e HDMI, HDR",
         preco: 1699.99,
         categoria: "monitor",
-        descricao: "Monitor topado pra fazer de tudo",
+        descricao: "Excelente monitor!",
         imagem: "https://images0.kabum.com.br/produtos/fotos/871300/monitor-gamer-curvo-husky-boreal-34-wqhd-ultrawide-200hz-1ms-adaptive-sync-displayport-e-hdmi-hdr-hmg00234pt_1762773854_gg.jpg"
     },
     {
@@ -34,6 +34,62 @@ const produtos = [
         categoria: "notebook",
         descricao: "Esse é potente de vdd.",
         imagem: "https://images6.kabum.com.br/produtos/fotos/649716/notebook-acer-gamer-nitro-v15-anv15-51-7837-intel-core-i7-8gb-ram-ddr5-15-6-nvidia-rtx-3050-512gb-ssd-linux-preto-nh-qqdal-008_1730306499_gg.jpg"
+    },
+    {
+        id: 5,
+        nome: "iPad Pro Apple, Tela 13, 256GB, Chip M4, Wi-Fi, Câmera Traseira 12MP, iPadOS 17, Preto Especial",
+        preco: 8499.90,
+        categoria: "apple",
+        descricao: "No precinho!",
+        imagem: "https://images5.kabum.com.br/produtos/fotos/581325/ipad-pro-apple-tela-13-256gb-chip-m4-wi-fi-camera-traseira-12mp-ipados-17-preto-especial-mvx23bz-a_1717437504_gg.jpg"
+    },
+    {
+        id: 6,
+        nome: "Monitor Gamer GIGABYTE 27 FHD, 180Hz, 1ms, IPS, HDMI e DisplayPort, 110% sRGB, FreeSync",
+        preco: 899.99,
+        categoria: "monitor",
+        descricao: "Excelente monitor, no precinho!",
+        imagem: "https://images0.kabum.com.br/produtos/fotos/636510/monitor-gamer-gigabyte-27-fhd-180hz-1ms-ips-hdmi-e-displayport-110-srgb-hdr-freesync-gs27fa-sa_1736186477_gg.jpg"
+    },
+    {
+        id: 7,
+        nome: "Monitor Gamer de Tubo 15 Polegadas 4K, 144Hz, 1ms, IPS, HDMI, DisplayPort, VGA, 100% sRGB",
+        preco: 1599.99,
+        categoria: "monitor",
+        descricao: "O melhor entre os melhores.",
+        imagem: "https://http2.mlstatic.com/D_962365-MLB91697545897_092025-C.jpg"
+    },
+    {
+        id: 8,
+        nome: "Game Retro Mini Super Nintendo + 150 mil Jogos + 2 Controles + Pack com todos os Jogos de Snes (Controles SNES)",
+        preco: 250.00,
+        categoria: "console",
+        descricao: "Old é pouco pra esse daqui.",
+        imagem: "https://m.media-amazon.com/images/I/51W1GgQs40L._AC_SX522_.jpg"
+    },
+    {
+        id: 9,
+        nome: "Monitor Gamer Samsung 24, Essential S3, Full HD, 100Hz, 5ms, HDMI, VGA, Preto",
+        preco: 535.60,
+        categoria: "monitor",
+        descricao: "Monitor top, custo benefício.",
+        imagem: "https://images0.kabum.com.br/produtos/fotos/magalu/724790/xlarge/Monitor-Gamer-Samsung-Essential-S3-LS24D300GALMZD-24-Full-HD-IPS_1765384347.jpg"
+    },
+    {
+        id: 10,
+        nome: "Notebook Lenovo IdeaPad Slim 3i Core I5 13420H, 8GB RAM, 512GB Win11",
+        preco: 2699.00,
+        categoria: "notebook",
+        descricao: "Notebook top para estudos e trabalho.",
+        imagem: "https://images1.kabum.com.br/produtos/fotos/876251/notebook-lenovo-ideapad-slim-3i-core-i5-13420h-8gb-ram-512gb-win11-83ns0002br_1751480019_gg.jpg"
+    },
+    {
+        id: 11,
+        nome: "MacBook Air Apple 13.6, Chip M2, CPU 8 Núcleos, GPU 10 Núcleos, 24GB, SSD 512GB, Cinza Espacial",
+        preco: 7457.50,
+        categoria: "notebook",
+        descricao: "Macbook custo benefício!",
+        imagem: "https://images2.kabum.com.br/produtos/fotos/954432/macbook-air-apple-13-6-chip-m2-cpu-8-nucleos-gpu-10-nucleos-24gb-ssd-512gb-cinza-espacial-z1hn0bz-a_1764100488_gg.jpg"
     }
 ];
 
