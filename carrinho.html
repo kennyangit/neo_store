@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho & Checkout | NeoStore</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* CSS Adicional Específico para a Tabela e Formulário */
+        .cart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 2rem;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        /* REQUISITO CSS: Pseudo-classe :hover na linha da tabela */
+        .cart-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .cart-table th,
+        .cart-table td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+
+        .cart-table thead th {
+            background-color: var(--secondary-color);
+            color: white;
+            text-transform: uppercase;
+        }
+
+        .checkout-section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilização do Formulário - REQUISITO CSS */
+        .checkout-form label {
+            display: block;
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .checkout-form input:not([type="submit"]),
+        .checkout-form textarea,
+        .checkout-form select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            /* Garante que padding não aumente a largura total */
+        }
+
+        /* REQUISITO CSS: Pseudo-classe :focus para inputs */
+        .checkout-form input:focus,
+        .checkout-form textarea:focus,
+        .checkout-form select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+            outline: none;
+        }
+
+        .checkout-form button[type="submit"] {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-top: 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* REQUISITO CSS: Pseudo-classe :hover para botões */
+        .checkout-form button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <h1 id="logo">NeoStore</h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="carrinho.html" class="active">Carrinho (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <h2>Seu Carrinho de Compras</h2>
+
+        <section id="cart-items">
+            <table class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Preço Unitário</th>
+                        <th>Ação</th>
+                    </tr>
+                </thead>
+                <tbody id="cart-table-body">
+                </tbody>
+            </table>
+
+            <p style="text-align: right; font-size: 1.2rem; font-weight: bold;">
+                Total: R$ <span id="cart-total">0,00</span>
+            </p>
+        </section>
+
+        <hr>
+
+        <section class="checkout-section">
+            <h3>Finalizar Compra</h3>
+
+            <form id="checkout-form" class="checkout-form">
+
+                <label for="name">Nome Completo:</label>
+                <input type="text" id="name" name="name" required placeholder="Seu nome aqui">
+
+                <label for="email">E-mail (Para entrega):</label>
+                <input type="email" id="email" name="email" required placeholder="exemplo@dominio.com">
+
+                <label for="cep">CEP (Formato 00000-000):</label>
+                <input type="text" id="cep" name="cep" required placeholder="Ex: 58400-000" pattern="\d{5}-\d{3}"
+                    title="O CEP deve estar no formato 00000-000">
+
+                <label for="payment">Método de Pagamento:</label>
+                <select id="payment" name="payment" required>
+                    <option value="">Selecione...</option>
+                    <option value="pix">Pix</option>
+                    <option value="card">Cartão de Crédito</option>
+                </select>
+
+                <label for="notes">Observações (Opcional):</label>
+                <textarea id="notes" name="notes" rows="4"
+                    placeholder="Insira informações adicionais, se necessário."></textarea>
+
+                <button type="submit">Confirmar Pedido</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 NeoStore - Todos os direitos reservados.</p>
+        <p>Desenvolvido para Projeto Web Front-End.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

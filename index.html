@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeoStore | Produtos Digitais</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="header-container">
+            <h1 id="logo">NeoStore</h1>
+
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="index.html" class="active">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="carrinho.html">Carrinho (<span id="cart-count">0</span>)</a></li>
+                </ul>
+            </nav>
+
+            <button id="menu-toggle" class="menu-toggle" aria-label="Abrir Menu">☰</button>
+        </div>
+    </header>
+
+    <main class="main-content">
+
+        <section class="search-filter-area">
+            <form id="search-form" class="search-bar">
+                <input type="search" id="product-search" placeholder="Buscar produtos..." required>
+                <button type="submit">Buscar</button>
+            </form>
+
+            <div class="filter-controls">
+                <select id="category-filter">
+                    <option value="">Todas as Categorias</option>
+                    <option value="console">Consoles / Vídeo Games</option>
+                    <option value="monitor">Monitores</option>
+                    <option value="notebook">Notebooks</option>
+
+                </select>
+            </div>
+        </section>
+
+        <section id="product-list" class="product-grid">
+            <h2>Nossos Produtos</h2>
+        </section>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2025 NeoStore - Todos os direitos reservados.</p>
+        <p>Desenvolvido para Projeto Web Front-End.</p>
+        <div class="social-links">
+            <a href="#" target="_blank">Instagram</a> |
+            <a href="#" target="_blank">Twitter</a>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,402 @@
+/* Importando fonte Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* REQUISITO CSS: Variáveis CSS */
+:root {
+    --primary-color: #4CAF50;
+    /* Verde Moderno */
+    --secondary-color: #388E3C;
+    /* Verde Escuro */
+    --accent-color: #FF9800;
+    /* Laranja/Âmbar */
+    --background-light: #F7F9FC;
+    /* Fundo suave */
+    --text-dark: #212529;
+    --text-light: #f8f9fa;
+    --card-bg: #ffffff;
+    --shadow-light: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --radius-md: 10px;
+    --spacing-md: 1.5rem;
+}
+
+/* Reset Básico */
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+/* HEADER & NAVIGATION */
+
+/* REQUISITO CSS: Seletor por ID */
+#logo {
+    color: var(--primary-color);
+    margin: 0;
+    font-weight: 700;
+}
+
+/* REQUISITO CSS: Seletor por Classe */
+.main-header {
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow-light);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    /* REQUISITO CSS: Flexbox (Obrigatório) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 600;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Efeito de Sublinhado Moderno no Hover */
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    bottom: -5px;
+    /* Ajustado */
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+/* REQUISITO CSS: Pseudo-classe :hover */
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+/* MAIN CONTENT & SEARCH */
+
+.main-content {
+    max-width: 1200px;
+    margin: var(--spacing-md) auto;
+    padding: 0 var(--spacing-md);
+}
+
+.search-filter-area {
+    /* REQUISITO CSS: Flexbox */
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background-color: var(--card-bg);
+    border-radius: var(--radius-md);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.search-bar {
+    display: flex;
+    flex-grow: 1;
+}
+
+.search-bar input[type="search"] {
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--radius-md) 0 0 var(--radius-md);
+    flex-grow: 1;
+    font-size: 1rem;
+}
+
+.search-bar button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-bar button[type="submit"]:hover {
+    background-color: var(--secondary-color);
+}
+
+.filter-controls select {
+    /* Ajuste para estilizar o SELECT corretamente */
+    padding: 0.8rem;
+    border: 1px solid #ced4da;
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    appearance: none;
+    /* Remove estilo nativo */
+    background: var(--card-bg);
+    cursor: pointer;
+}
+
+/* PRODUCT GRID & CARDS */
+
+.product-grid {
+    /* REQUISITO CSS: Grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background-color: var(--card-bg);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-light);
+    padding: 1.5rem;
+    text-align: center;
+    /* REQUISITO CSS: Flexbox */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.card-footer {
+    margin-top: 1rem;
+    /* REQUISITO CSS: Flexbox */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-footer .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+}
+
+/* BOTÕES GERAIS */
+.btn-buy,
+.btn-remove {
+    padding: 10px 20px;
+    border: none;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    white-space: nowrap;
+    /* Evita quebra de linha no botão */
+}
+
+.btn-buy {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-buy:hover {
+    background-color: var(--secondary-color);
+    transform: scale(1.02);
+}
+
+.btn-remove {
+    background-color: #dc3545;
+    /* Vermelho mais sutil */
+    color: white;
+    font-weight: normal;
+    padding: 8px 15px;
+}
+
+.btn-remove:hover {
+    background-color: #c82333;
+}
+
+/* CARRINHO E CHECKOUT (carrinho.html) */
+
+/* REQUISITO CSS: Tabela */
+.cart-table {
+    box-shadow: var(--shadow-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    /* Garante que o raio da borda seja aplicado */
+}
+
+.cart-table th,
+.cart-table td {
+    border: none;
+    /* Remove bordas internas para um look mais clean */
+    border-bottom: 1px solid #eee;
+}
+
+.cart-table thead th {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+.cart-table tbody tr:hover {
+    background-color: #f1f1f1;
+}
+
+.checkout-section {
+    box-shadow: var(--shadow-light);
+}
+
+/* Formulário (Melhorado) */
+.checkout-form input:not([type="submit"]),
+.checkout-form textarea,
+.checkout-form select {
+    padding: 12px;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    transition: border-color 0.3s;
+}
+
+/* FOOTER */
+
+.main-footer {
+    background-color: var(--text-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 1.5rem 0;
+    margin-top: 3rem;
+}
+
+/* REQUISITO CSS: Seletor de Descendente */
+.main-footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.main-footer a:hover {
+    color: var(--accent-color);
+}
+
+
+
+.menu-toggle {
+    display: none;
+}
+
+/* MEDIA QUERY (Responsividade) */
+
+@media (max-width: 768px) {
+
+    /* REQUISITO CSS: Media Query (crucial) */
+    .search-filter-area {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .search-bar input[type="search"] {
+        border-radius: var(--radius-md);
+    }
+
+    .search-bar button[type="submit"] {
+        display: none;
+        /* Oculta o botão de busca para mobile simplificado */
+    }
+
+    .filter-controls {
+        width: 100%;
+    }
+
+    .filter-controls select {
+        width: 100%;
+    }
+
+    .cart-table,
+    .checkout-section {
+        padding: 1rem;
+    }
+
+    /* Garante que o botão do carrinho funcione no header em mobile */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+        color: var(--primary-color);
+    }
+
+    .main-nav {
+        /* Oculta o menu em mobile por padrão */
+        display: none;
+        position: absolute;
+        top: 60px;
+        /* Ajuste para ficar abaixo do header */
+        left: 0;
+        right: 0;
+        background-color: var(--card-bg);
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .main-nav.menu-open {
+        display: block;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        right: 0;
+        background-color: var(--card-bg);
+        z-index: 99;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-nav ul {
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem 0;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .main-nav li:last-child {
+        border-bottom: none;
+    }
+}
