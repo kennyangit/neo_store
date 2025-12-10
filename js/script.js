@@ -96,7 +96,7 @@ const cartCount = document.querySelector('#cart-count');
 const menuToggle = document.querySelector('#menu-toggle');
 const mainNav = document.querySelector('.main-nav');
 const categoryFilter = document.querySelector('#category-filter');
-const searchForm = document.querySelector('#search-form'); // Elemento de Busca
+const searchForm = document.querySelector('#search-form');
 
 
 function salvarCarrinho() {
@@ -208,7 +208,7 @@ if (searchForm) {
             return nomeProduto.includes(termoBusca) || descricaoProduto.includes(termoBusca);
         });
 
-        exibirProdutos(produtosEncontrados); // Usa a função que lida com lista vazia
+        exibirProdutos(produtosEncontrados);
     });
 }
 
