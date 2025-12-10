@@ -1,7 +1,3 @@
-// =======================================================
-// 1. ESTRUTURA DE DADOS E VARIÁVEIS GLOBAIS
-// =======================================================
-
 const produtos = [
     {
         id: 1,
@@ -93,10 +89,8 @@ const produtos = [
     }
 ];
 
-// Array que será carregado do localStorage ou inicializado vazio
 let carrinho = [];
 
-// REQUISITO JS: Manipular elementos com document.querySelector
 const productList = document.querySelector('#product-list');
 const cartCount = document.querySelector('#cart-count');
 const menuToggle = document.querySelector('#menu-toggle');
@@ -104,12 +98,8 @@ const mainNav = document.querySelector('.main-nav');
 const categoryFilter = document.querySelector('#category-filter');
 const searchForm = document.querySelector('#search-form'); // Elemento de Busca
 
-// =======================================================
-// 2. FUNÇÕES DE PERSISTÊNCIA (localStorage)
-// =======================================================
 
 function salvarCarrinho() {
-    // Transforma o array JavaScript em uma string JSON e salva no localStorage
     localStorage.setItem('carrinhoNeoStore', JSON.stringify(carrinho));
 }
 
@@ -117,20 +107,13 @@ function carregarCarrinho() {
     const carrinhoSalvo = localStorage.getItem('carrinhoNeoStore');
 
     if (carrinhoSalvo) {
-        // Se houver dados salvos, transforma a string JSON de volta em array
         carrinho = JSON.parse(carrinhoSalvo);
 
-        // Atualiza o contador imediatamente no header, se o elemento existir
         if (cartCount) {
             cartCount.textContent = carrinho.length;
         }
     }
 }
-
-
-// =======================================================
-// 3. FUNÇÕES DE RENDERIZAÇÃO E DOM
-// =======================================================
 
 function renderizarProduto(produto) {
     const card = document.createElement('div');
@@ -156,48 +139,36 @@ function renderizarProduto(produto) {
 
 function exibirProdutos(lista) {
     if (productList) {
-        // 🚨 CORREÇÃO: Define o título para ocupar 100% da largura do grid.
         productList.innerHTML = '<h2 style="grid-column: 1 / -1;">Nossos Produtos</h2>';
 
-        // Se a lista estiver vazia (após filtro/busca), informa ao usuário
         if (lista.length === 0) {
             productList.innerHTML += `
                 <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                    <h3>😔 Nenhum produto encontrado.</h3>
+                    <h3>Nenhum produto encontrado.</h3>
                     <p>Tente outra busca ou categoria.</p>
                 </div>
             `;
             return;
         }
 
-        // REQUISITO JS: Loop (forEach)
         lista.forEach(produto => {
             renderizarProduto(produto);
         });
     }
 }
 
-
-// =======================================================
-// 4. INTERAÇÕES COM EVENTOS
-// =======================================================
-
-// INTERAÇÃO 1: Abrir/Fechar Menu Mobile
 if (menuToggle) {
     menuToggle.addEventListener('click', () => {
         mainNav.classList.toggle('menu-open');
     });
 }
 
-// INTERAÇÃO 2: Adicionar um produto ao carrinho
 function adicionarAoCarrinho(event) {
     const produtoId = parseInt(event.target.dataset.id);
     const produtoSelecionado = produtos.find(p => p.id === produtoId);
 
     if (produtoSelecionado) {
         carrinho.push(produtoSelecionado);
-
-        // 🔑 Salva após a alteração
         salvarCarrinho();
 
         cartCount.textContent = carrinho.length;
@@ -205,7 +176,6 @@ function adicionarAoCarrinho(event) {
     }
 }
 
-// INTERAÇÃO 3: Filtro de Produtos (Buscar por Categoria) - CORRIGIDO
 if (categoryFilter) {
     categoryFilter.addEventListener('change', (event) => {
         const categoriaSelecionada = event.target.value;
@@ -213,18 +183,15 @@ if (categoryFilter) {
         if (categoriaSelecionada === '') {
             exibirProdutos(produtos); // Exibe todos
         } else {
-            // REQUISITO JS: Condicional + Método de Array (filter)
             const produtosFiltrados = produtos.filter(produto => produto.categoria === categoriaSelecionada);
             exibirProdutos(produtosFiltrados);
         }
     });
 }
 
-
-// INTERAÇÃO 4: Busca de Produtos por Texto - GARANTINDO O FUNCIONAMENTO
 if (searchForm) {
     searchForm.addEventListener('submit', (event) => {
-        event.preventDefault(); // Impede o recarregamento da página
+        event.preventDefault();
 
         const searchInput = document.querySelector('#product-search');
         const termoBusca = searchInput.value.toLowerCase().trim();
@@ -238,18 +205,12 @@ if (searchForm) {
             const nomeProduto = produto.nome.toLowerCase();
             const descricaoProduto = produto.descricao.toLowerCase();
 
-            // Verifica se o termo de busca está no nome OU na descrição
             return nomeProduto.includes(termoBusca) || descricaoProduto.includes(termoBusca);
         });
 
         exibirProdutos(produtosEncontrados); // Usa a função que lida com lista vazia
     });
 }
-
-
-// =======================================================
-// 5. FUNCIONALIDADES DO CARRINHO (Apenas em carrinho.html)
-// =======================================================
 
 const cartTableBody = document.getElementById('cart-table-body');
 const cartTotalElement = document.getElementById('cart-total');
@@ -292,8 +253,6 @@ if (cartTableBody) {
         const indexParaRemover = parseInt(event.target.dataset.index);
 
         carrinho.splice(indexParaRemover, 1);
-
-        // 🔑 Salva após a remoção
         salvarCarrinho();
 
         cartCount.textContent = carrinho.length;
@@ -301,7 +260,6 @@ if (cartTableBody) {
         alert("Item removido!");
     }
 
-    // REQUISITO JS: Evento submit
     if (checkoutForm) {
         checkoutForm.addEventListener('submit', (event) => {
             event.preventDefault();
@@ -313,11 +271,7 @@ if (cartTableBody) {
 
             const nomeCliente = document.getElementById('name').value;
             alert(`Parabéns, ${nomeCliente}! Seu pedido (R$ ${cartTotalElement.textContent}) foi recebido com sucesso pela NeoStore.`);
-
-            // Esvaziar o carrinho após a compra simulada
             carrinho = [];
-
-            // 🔑 Salva o carrinho vazio
             salvarCarrinho();
 
             cartCount.textContent = 0;
@@ -328,20 +282,13 @@ if (cartTableBody) {
 }
 
 
-// =======================================================
-// 6. INICIALIZAÇÃO GERAL (DOMContentLoaded)
-// =======================================================
-
 document.addEventListener('DOMContentLoaded', () => {
-    // 🔑 PASSO CRUCIAL: Carrega o carrinho ANTES de renderizar qualquer coisa.
     carregarCarrinho();
 
-    // Renderiza produtos (se estiver na página index.html)
     if (productList) {
         exibirProdutos(produtos);
     }
 
-    // Renderiza a tabela do carrinho (se estiver na página carrinho.html)
     if (cartTableBody) {
         renderizarCarrinho();
     }

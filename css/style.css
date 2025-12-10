@@ -1,16 +1,10 @@
-/* Importando fonte Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
-/* REQUISITO CSS: Variáveis CSS */
 :root {
     --primary-color: #4CAF50;
-    /* Verde Moderno */
     --secondary-color: #388E3C;
-    /* Verde Escuro */
     --accent-color: #FF9800;
-    /* Laranja/Âmbar */
     --background-light: #F7F9FC;
-    /* Fundo suave */
     --text-dark: #212529;
     --text-light: #f8f9fa;
     --card-bg: #ffffff;
@@ -19,7 +13,6 @@
     --spacing-md: 1.5rem;
 }
 
-/* Reset Básico */
 body {
     font-family: 'Inter', sans-serif;
     margin: 0;
@@ -36,16 +29,12 @@ h3 {
     font-weight: 600;
 }
 
-/* HEADER & NAVIGATION */
-
-/* REQUISITO CSS: Seletor por ID */
 #logo {
     color: var(--primary-color);
     margin: 0;
     font-weight: 700;
 }
 
-/* REQUISITO CSS: Seletor por Classe */
 .main-header {
     background-color: var(--card-bg);
     box-shadow: var(--shadow-light);
@@ -59,7 +48,6 @@ h3 {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    /* REQUISITO CSS: Flexbox (Obrigatório) */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -82,20 +70,17 @@ h3 {
     transition: color 0.3s ease;
 }
 
-/* Efeito de Sublinhado Moderno no Hover */
 .main-nav a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 3px;
     bottom: -5px;
-    /* Ajustado */
     left: 0;
     background-color: var(--primary-color);
     transition: width 0.3s ease;
 }
 
-/* REQUISITO CSS: Pseudo-classe :hover */
 .main-nav a:hover,
 .main-nav a.active {
     color: var(--primary-color);
@@ -106,8 +91,6 @@ h3 {
     width: 100%;
 }
 
-/* MAIN CONTENT & SEARCH */
-
 .main-content {
     max-width: 1200px;
     margin: var(--spacing-md) auto;
@@ -115,7 +98,6 @@ h3 {
 }
 
 .search-filter-area {
-    /* REQUISITO CSS: Flexbox */
     display: flex;
     gap: 1.5rem;
     margin-bottom: 2rem;
@@ -154,21 +136,16 @@ h3 {
 }
 
 .filter-controls select {
-    /* Ajuste para estilizar o SELECT corretamente */
     padding: 0.8rem;
     border: 1px solid #ced4da;
     border-radius: var(--radius-md);
     font-size: 1rem;
     appearance: none;
-    /* Remove estilo nativo */
     background: var(--card-bg);
     cursor: pointer;
 }
 
-/* PRODUCT GRID & CARDS */
-
 .product-grid {
-    /* REQUISITO CSS: Grid */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
@@ -180,7 +157,6 @@ h3 {
     box-shadow: var(--shadow-light);
     padding: 1.5rem;
     text-align: center;
-    /* REQUISITO CSS: Flexbox */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -201,7 +177,6 @@ h3 {
 
 .card-footer {
     margin-top: 1rem;
-    /* REQUISITO CSS: Flexbox */
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -213,7 +188,6 @@ h3 {
     color: var(--secondary-color);
 }
 
-/* BOTÕES GERAIS */
 .btn-buy,
 .btn-remove {
     padding: 10px 20px;
@@ -224,7 +198,6 @@ h3 {
     transition: all 0.3s ease;
     text-transform: uppercase;
     white-space: nowrap;
-    /* Evita quebra de linha no botão */
 }
 
 .btn-buy {
@@ -239,7 +212,6 @@ h3 {
 
 .btn-remove {
     background-color: #dc3545;
-    /* Vermelho mais sutil */
     color: white;
     font-weight: normal;
     padding: 8px 15px;
@@ -249,20 +221,15 @@ h3 {
     background-color: #c82333;
 }
 
-/* CARRINHO E CHECKOUT (carrinho.html) */
-
-/* REQUISITO CSS: Tabela */
 .cart-table {
     box-shadow: var(--shadow-light);
     border-radius: var(--radius-md);
     overflow: hidden;
-    /* Garante que o raio da borda seja aplicado */
 }
 
 .cart-table th,
 .cart-table td {
     border: none;
-    /* Remove bordas internas para um look mais clean */
     border-bottom: 1px solid #eee;
 }
 
@@ -279,7 +246,6 @@ h3 {
     box-shadow: var(--shadow-light);
 }
 
-/* Formulário (Melhorado) */
 .checkout-form input:not([type="submit"]),
 .checkout-form textarea,
 .checkout-form select {
@@ -289,8 +255,6 @@ h3 {
     transition: border-color 0.3s;
 }
 
-/* FOOTER */
-
 .main-footer {
     background-color: var(--text-dark);
     color: var(--text-light);
@@ -299,7 +263,6 @@ h3 {
     margin-top: 3rem;
 }
 
-/* REQUISITO CSS: Seletor de Descendente */
 .main-footer a {
     color: var(--primary-color);
     text-decoration: none;
@@ -310,17 +273,14 @@ h3 {
     color: var(--accent-color);
 }
 
-
-
 .menu-toggle {
     display: none;
 }
 
-/* MEDIA QUERY (Responsividade) */
+
+/* Responsividade */
 
 @media (max-width: 768px) {
-
-    /* REQUISITO CSS: Media Query (crucial) */
     .search-filter-area {
         flex-direction: column;
         gap: 1rem;
@@ -332,7 +292,6 @@ h3 {
 
     .search-bar button[type="submit"] {
         display: none;
-        /* Oculta o botão de busca para mobile simplificado */
     }
 
     .filter-controls {
@@ -348,7 +307,6 @@ h3 {
         padding: 1rem;
     }
 
-    /* Garante que o botão do carrinho funcione no header em mobile */
     .menu-toggle {
         display: block;
         background: none;
@@ -359,11 +317,9 @@ h3 {
     }
 
     .main-nav {
-        /* Oculta o menu em mobile por padrão */
         display: none;
         position: absolute;
         top: 60px;
-        /* Ajuste para ficar abaixo do header */
         left: 0;
         right: 0;
         background-color: var(--card-bg);
