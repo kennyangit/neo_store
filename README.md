@@ -1,7 +1,7 @@
 <h1 align="center">🛒 NeoStore — Loja Digital</h1>
 
 <p align="center">
-  Loja virtual moderna construída com <b>HTML</b>, <b>CSS</b> e <b>JavaScript</b>,
+  Loja virtual construída com <b>HTML</b>, <b>CSS</b> e <b>JavaScript</b>,
   com catálogo dinâmico, busca, filtros, carrinho com LocalStorage e checkout validado.
 </p>
 
