@@ -45,16 +45,16 @@
   <li>Grid adaptável para os cards</li>
 </ul>
 
-<h2>🔗 Acesse o site:</h2>
-<p>https://kennyangit.github.io/neo_store/</p>
+<h3>🔗 Acesse o site:</h3>
+<ul>
+  <li>https://kennyangit.github.io/neo_store/</li>
+</ul>
 
 <h2>🏗️ Tecnologias Utilizadas</h2>
 <ul>
-  <li>HTML5</li>
-  <li>CSS3 (Flexbox, Grid, Variáveis)</li>
-  <li>JavaScript (DOM, Eventos, LocalStorage)</li>
-  <li>Google Fonts</li>
-  <li>YouTube iFrame Embed</li>
+  <li>HTML</li>
+  <li>CSS</li>
+  <li>JavaScript</li>
 </ul>
 
 <h2>📦 Funcionalidades Futuras</h2>
