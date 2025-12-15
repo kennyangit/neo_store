@@ -1,4 +1,4 @@
-<h1 align="center">🛒 NeoStore — Loja Digital Responsiva</h1>
+<h1 align="center">🛒 NeoStore — Loja Digital</h1>
 
 <p align="center">
   Loja virtual moderna construída com <b>HTML</b>, <b>CSS</b> e <b>JavaScript</b>,
@@ -45,9 +45,7 @@
   <li>Grid adaptável para os cards</li>
 </ul>
 
-<hr>
-
-<h2>🔗 Acesse o Projeto:</h2>
+<h2>🔗 Acesse o site:</h2>
 <p>https://kennyangit.github.io/neo_store/</p>
 
 <h2>🏗️ Tecnologias Utilizadas</h2>
@@ -63,9 +61,8 @@
 <ul>
   <li>Sistema de login</li>
   <li>Dashboard administrativo</li>
-  <li>Filtros avançados</li>
   <li>Integração com API de pagamentos</li>
-  <li>Banco de dados real (Node + MongoDB/MySQL)</li>
+  <li>Banco de dados (Node + MySQL)</li>
 </ul>
 
 
