@@ -7,7 +7,6 @@
     <title>Carrinho & Checkout | NeoStore</title>
     <link rel="stylesheet" href="css/style.css">
     <style>
-        /* CSS Adicional Específico para a Tabela e Formulário */
         .cart-table {
             width: 100%;
             border-collapse: collapse;
@@ -16,7 +15,6 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
         }
 
-        /* REQUISITO CSS: Pseudo-classe :hover na linha da tabela */
         .cart-table tbody tr:hover {
             background-color: #f1f1f1;
         }
@@ -41,7 +39,6 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
-        /* Estilização do Formulário - REQUISITO CSS */
         .checkout-form label {
             display: block;
             margin-top: 1rem;
@@ -57,10 +54,8 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             box-sizing: border-box;
-            /* Garante que padding não aumente a largura total */
         }
 
-        /* REQUISITO CSS: Pseudo-classe :focus para inputs */
         .checkout-form input:focus,
         .checkout-form textarea:focus,
         .checkout-form select:focus {
@@ -82,7 +77,6 @@
             transition: background-color 0.3s ease;
         }
 
-        /* REQUISITO CSS: Pseudo-classe :hover para botões */
         .checkout-form button[type="submit"]:hover {
             background-color: #0056b3;
         }
@@ -122,7 +116,7 @@
             </table>
 
             <p style="text-align: right; font-size: 1.2rem; font-weight: bold;">
-                Total: R$ <span id="cart-total">0,00</span>
+                Total: <span id="cart-total">R$ 0,00</span>
             </p>
         </section>
 
@@ -161,7 +155,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2025 NeoStore - Todos os direitos reservados.</p>
+        <p>&copy; 2026 NeoStore - Todos os direitos reservados.</p>
         <p>Desenvolvido para Projeto Web Front-End.</p>
         <div class="social-links">
             <a href="#" target="_blank">Instagram</a> |
