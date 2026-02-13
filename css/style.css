@@ -29,11 +29,8 @@ h3 {
     font-weight: 600;
 }
 
-<<<<<<< HEAD
 /* HEADER & NAVIGATION */
 
-=======
->>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 #logo {
     color: var(--primary-color);
     margin: 0;
@@ -226,10 +223,7 @@ h3 {
     background-color: #c82333;
 }
 
-<<<<<<< HEAD
 /* CARRINHO E CHECKOUT */
-=======
->>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 .cart-table {
     box-shadow: var(--shadow-light);
     border-radius: var(--radius-md);
@@ -255,10 +249,7 @@ h3 {
     box-shadow: var(--shadow-light);
 }
 
-<<<<<<< HEAD
 /* Formulário */
-=======
->>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 .checkout-form input:not([type="submit"]),
 .checkout-form textarea,
 .checkout-form select {
@@ -294,10 +285,6 @@ h3 {
 /* Responsividade */
 
 @media (max-width: 768px) {
-<<<<<<< HEAD
-
-=======
->>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
     .search-filter-area {
         flex-direction: column;
         gap: 1rem;
