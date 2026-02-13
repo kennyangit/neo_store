@@ -1,4 +1,3 @@
-/* Importando fonte Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 :root {
@@ -30,8 +29,11 @@ h3 {
     font-weight: 600;
 }
 
+<<<<<<< HEAD
 /* HEADER & NAVIGATION */
 
+=======
+>>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 #logo {
     color: var(--primary-color);
     margin: 0;
@@ -94,8 +96,6 @@ h3 {
     width: 100%;
 }
 
-/* MAIN CONTENT & SEARCH */
-
 .main-content {
     max-width: 1200px;
     margin: var(--spacing-md) auto;
@@ -150,8 +150,6 @@ h3 {
     cursor: pointer;
 }
 
-/* PRODUCT GRID & CARDS */
-
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -195,7 +193,6 @@ h3 {
     color: var(--secondary-color);
 }
 
-/* BOTÕES GERAIS */
 .btn-buy,
 .btn-remove {
     padding: 10px 20px;
@@ -229,7 +226,10 @@ h3 {
     background-color: #c82333;
 }
 
+<<<<<<< HEAD
 /* CARRINHO E CHECKOUT */
+=======
+>>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 .cart-table {
     box-shadow: var(--shadow-light);
     border-radius: var(--radius-md);
@@ -255,7 +255,10 @@ h3 {
     box-shadow: var(--shadow-light);
 }
 
+<<<<<<< HEAD
 /* Formulário */
+=======
+>>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
 .checkout-form input:not([type="submit"]),
 .checkout-form textarea,
 .checkout-form select {
@@ -264,8 +267,6 @@ h3 {
     border-radius: 6px;
     transition: border-color 0.3s;
 }
-
-/* FOOTER */
 
 .main-footer {
     background-color: var(--text-dark);
@@ -285,16 +286,18 @@ h3 {
     color: var(--accent-color);
 }
 
-
-
 .menu-toggle {
     display: none;
 }
 
-/* MEDIA QUERY (Responsividade) */
+
+/* Responsividade */
 
 @media (max-width: 768px) {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1f20099f065e75f0b92c7c8fe3ac4b57db05c09c
     .search-filter-area {
         flex-direction: column;
         gap: 1rem;

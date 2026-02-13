@@ -1,7 +1,3 @@
-// =======================================================
-// 1. ESTRUTURA DE DADOS E VARIÁVEIS GLOBAIS
-// =======================================================
-
 const produtos = [
     {
         id: 1,
@@ -256,20 +252,13 @@ function carregarCarrinho() {
     const carrinhoSalvo = localStorage.getItem('carrinhoNeoStore');
 
     if (carrinhoSalvo) {
-        // Se houver dados salvos, transforma a string JSON de volta em array
         carrinho = JSON.parse(carrinhoSalvo);
 
-        // Atualiza o contador imediatamente no header, se o elemento existir
         if (cartCount) {
             cartCount.textContent = carrinho.length;
         }
     }
 }
-
-
-// =======================================================
-// 3. FUNÇÕES DE RENDERIZAÇÃO E DOM
-// =======================================================
 
 function renderizarProduto(produto) {
     const card = document.createElement('div');
@@ -298,7 +287,6 @@ function exibirProdutos(lista) {
         // Define o título para ocupar 100% da largura do grid.
         productList.innerHTML = '<h2 style="grid-column: 1 / -1;">Nossos Produtos</h2>';
 
-        // Se a lista estiver vazia (após filtro/busca), informa ao usuário
         if (lista.length === 0) {
             productList.innerHTML += `
                 <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
@@ -340,7 +328,6 @@ if (menuToggle) {
     });
 }
 
-// INTERAÇÃO 2: Adicionar um produto ao carrinho
 function adicionarAoCarrinho(event) {
     const produtoId = parseInt(event.target.dataset.id);
     const produtoSelecionado = produtos.find(p => p.id === produtoId);
@@ -551,7 +538,6 @@ function inicializarPagina() {
         }, 50);
     }
 
-    // Renderiza a tabela do carrinho (se estiver na página carrinho.html)
     if (cartTableBody) {
         renderizarCarrinho();
     }
