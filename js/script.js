@@ -457,7 +457,7 @@ if (cartTableBody) {
         });
 
         cartTableBody.innerHTML = htmlContent;
-        cartTotalElement.textContent = total.toFixed(2).replace('.', ',');
+        cartTotalElement.textContent = formatarPreco(total);
 
         document.querySelectorAll('.btn-remove').forEach(button => {
             button.addEventListener('click', removerDoCarrinho);
