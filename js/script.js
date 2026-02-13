@@ -436,7 +436,7 @@ if (cartTableBody) {
     function renderizarCarrinho() {
         if (carrinho.length === 0) {
             cartTableBody.innerHTML = '<tr><td colspan="3" style="text-align: center;">Seu carrinho está vazio.</td></tr>';
-            cartTotalElement.textContent = formatarPreco(total);
+            cartTotalElement.textContent = formatarPreco(0);
             return;
         }
 
@@ -446,17 +446,18 @@ if (cartTableBody) {
         carrinho.forEach((item, index) => {
             total += item.preco;
             htmlContent += `
-                <tr>
-                    <td>${item.nome}</td>
-                    <td>${formatarPreco(item.preco)}</td>
-                    <td>
-                        <button class="btn-remove" data-index="${index}">Remover</button>
-                    </td>
-                </tr>
-            `;
+            <tr>
+                <td>${item.nome}</td>
+                <td>${formatarPreco(item.preco)}</td>
+                <td>
+                    <button class="btn-remove" data-index="${index}">Remover</button>
+                </td>
+            </tr>
+        `;
         });
 
         cartTableBody.innerHTML = htmlContent;
+
         cartTotalElement.textContent = formatarPreco(total);
 
         document.querySelectorAll('.btn-remove').forEach(button => {
