@@ -448,7 +448,7 @@ if (cartTableBody) {
             htmlContent += `
                 <tr>
                     <td>${item.nome}</td>
-                    <td>${formatarPreco(total)}</td>
+                    <td>${formatarPreco(item.preco)}</td>
                     <td>
                         <button class="btn-remove" data-index="${index}">Remover</button>
                     </td>
